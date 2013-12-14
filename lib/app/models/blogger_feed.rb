@@ -18,6 +18,12 @@ class BloggerFeed < ActiveRecord::Base
   
   has_many :entries, :class_name => 'BloggerFeedEntry', 
       :order => 'published DESC',
+      :conditions => {:hidden => false},
+      :dependent => :delete_all, 
+      :autosave => true
+
+  has_many :all_entries, :class_name => 'BloggerFeedEntry', 
+      :order => 'published DESC',
       :dependent => :delete_all, 
       :autosave => true
   
@@ -130,7 +136,7 @@ class BloggerFeed < ActiveRecord::Base
         loaded_entries = 0
         # Copy data into BloggerFeed instance
         feed.elements.each('entry') do |entry|
-          if blogger_feed_entry = self.entries.find_by_entry_id(entry.elements['id'].text)
+          if blogger_feed_entry = self.all_entries.find_by_entry_id(entry.elements['id'].text)
             blogger_feed_entry.update_attributes! BloggerFeedEntry.attributes_from_xml_atom_feed_entry(entry)
             ret_data[:updated] += 1
           else
