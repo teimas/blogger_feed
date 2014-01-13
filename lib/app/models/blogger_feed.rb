@@ -213,7 +213,7 @@ class BloggerFeed < ActiveRecord::Base
   
   # Equivalencia entre blogID y la url en blogger donde obtener el RSS
   def url_from_blog_id
-    "http://www.blogger.com/feeds/#{blog_id}/posts/default"
+    "https://www.blogger.com/feeds/#{blog_id}/posts/default"
   end
 
 private
