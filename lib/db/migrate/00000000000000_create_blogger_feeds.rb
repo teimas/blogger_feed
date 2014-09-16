@@ -1,3 +1,4 @@
+# encoding: utf-8
 #
 # To apply this migration, copy this file to the db/migrate folder and change its name with the 
 # current timestamp (or use script/generate migration CreateControllerActionsLogs and copy-paste this content).

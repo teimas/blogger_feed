@@ -1,3 +1,4 @@
+# encoding: utf-8
 #
 # This is a sample migration to create new blogger_feeds in the database.
 #

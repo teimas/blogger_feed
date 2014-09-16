@@ -1,3 +1,4 @@
+# encoding: utf-8
 # BloggerFeed
 # == Schema Information
 # Schema version: 20100830082032
