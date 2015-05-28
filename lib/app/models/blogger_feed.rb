@@ -106,7 +106,7 @@ class BloggerFeed < ActiveRecord::Base
     client = GData::Client::Blogger.new :headers => http_headers
     
     # Login using ClientLogin, if it's a private blog
-    client.clientlogin(client_login_email, client_login_password) if client_login_email.present? and client_login_password.present?
+    # client.clientlogin(client_login_email, client_login_password) if client_login_email.present? and client_login_password.present?
 
     # Url with parameters
     url = url_from_blog_id
